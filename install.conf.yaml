@@ -6,14 +6,15 @@
 - clean: ['~', './.config']
 
 - link:
-    ~/.aliases:     .aliases
-    ~/.bash_logout: .bash_logout
-    ~/.bashrc:      .bashrc
-    ~/.functions:   .functions
-    ~/.gitconfig:   .gitconfig
-    ~/.npmrc:       .npmrc
-    ~/.profile:     .profile
-    ~/.vimrc:       .vimrc
-    ~/.zshrc:       .zshrc
+    ~/.aliases:      .aliases
+    ~/.bash_logout:  .bash_logout
+    ~/.bashrc:       .bashrc
+    ~/.editorconfig: .editorconfig
+    ~/.functions:    .functions
+    ~/.gitconfig:    .gitconfig
+    ~/.npmrc:        .npmrc
+    ~/.profile:      .profile
+    ~/.vimrc:        .vimrc
+    ~/.zshrc:        .zshrc
 
 
