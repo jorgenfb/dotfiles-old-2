@@ -19,6 +19,9 @@ setopt extendedhistory
 setopt completeinword
 setopt completealiases
 
+# Setup history search for ctrl-r
+bindkey '^R' history-incremental-search-backward
+
 ####################################################################################
 # Install npm packages globally without sudo
 #
