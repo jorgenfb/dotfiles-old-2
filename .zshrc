@@ -53,9 +53,10 @@ prompt pure
 . ~/z.sh 
 
 #############################################
-# Initialize aliases
+# Initialize aliases and functions
 #############################################
 source ~/.aliases
+source ~/.functions
 
 
 
