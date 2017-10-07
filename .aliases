@@ -32,8 +32,8 @@ alias ff='find . -type f -name'
 # Ask before overwriting
 alias cp='cp -i'
 
-# Safely move files to trash instead of permanently deleting
-alias rm='trash'
+# Ask before removing
+alias rm='rm -i'
 
 # Shortcut for grepping
 alias G='| grep'
