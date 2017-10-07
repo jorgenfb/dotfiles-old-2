@@ -59,3 +59,4 @@ source ~/.aliases
 
 
 
+source /opt/ros/kinetic/setup.zsh
