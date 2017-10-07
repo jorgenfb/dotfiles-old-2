@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', './.config']
+
+- link:
+    ~/.aliases:     .aliases
+    ~/.bash_logout: .bash_logout
+    ~/.bashrc:      .bashrc
+    ~/.gitconfig:   .gitconfig
+    ~/.npmrc:       .npmrc
+    ~/.profile:     .profile
+    ~/.vimrc:       .vimrc
+    ~/.zshrc:       .zshrc
+
+
