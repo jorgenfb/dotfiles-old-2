@@ -59,5 +59,11 @@ source ~/.aliases
 source ~/.functions
 
 
+#############################################
+# Set default editor
+#############################################
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 
 source /opt/ros/kinetic/setup.zsh
