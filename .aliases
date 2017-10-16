@@ -40,3 +40,6 @@ alias G='| grep'
 
 # Open files easily
 alias o='xdg-open'
+
+# Open editor
+alias e="$EDITOR"
