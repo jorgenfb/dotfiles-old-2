@@ -43,3 +43,9 @@ alias o='xdg-open'
 
 # Open editor
 alias e="$EDITOR"
+
+# Build baktus from anywhere
+alias bb='current_dir=$PWD; cd ~/dev/baktus/; catkin_make; cd $current_dir;'
+
+# Source baktus setup
+alias sb='source  ~/dev/baktus/devel.zsh'
