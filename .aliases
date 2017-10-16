@@ -37,3 +37,6 @@ alias rm='rm -i'
 
 # Shortcut for grepping
 alias G='| grep'
+
+# Open files easily
+alias o='xdg-open'
