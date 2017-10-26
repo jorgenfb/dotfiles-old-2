@@ -16,5 +16,6 @@
     ~/.profile:      .profile
     ~/.vimrc:        .vimrc
     ~/.zshrc:        .zshrc
+    ~/bin:           bin
 
 

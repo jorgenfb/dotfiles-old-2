@@ -60,6 +60,11 @@ prompt pure
 source ~/.aliases
 source ~/.functions
 
+#############################################
+# Add bin folder to path
+#############################################
+PATH="$PATH:~/bin"
+
 
 #############################################
 # Set default editor
