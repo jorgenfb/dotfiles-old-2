@@ -2,7 +2,6 @@
 alias d='docker $*'
 alias dps='docker ps'
 alias d-c='docker-compose $*'
-
 # Git
 alias ga='git add'
 alias gs='git status'
@@ -39,7 +38,7 @@ alias rm='rm -i'
 alias G='| grep'
 
 # Open files easily
-alias o='xdg-open'
+alias o='open'
 
 # Open editor
 alias e="$EDITOR"
@@ -48,4 +47,4 @@ alias e="$EDITOR"
 alias bb='current_dir=$PWD; cd ~/dev/baktus/; catkin_make; cd $current_dir;'
 
 # Source baktus setup
-alias sb='source  ~/dev/baktus/devel.zsh'
+alias sb='source  ~/dev/baktus/devel/setup.zsh'
