@@ -3,3 +3,7 @@
 	email = joergen.borgesen@gmail.com
 [push]
 	default = simple
+[core]
+	excludesfile = /home/jorgen/.gitignore
+[pull]
+	rebase = true

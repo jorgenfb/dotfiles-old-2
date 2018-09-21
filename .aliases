@@ -4,6 +4,7 @@ alias dps='docker ps'
 alias d-c='docker-compose $*'
 # Git
 alias ga='git add'
+alias gau='git add -u'
 alias gs='git status'
 
 # Colorize the ls output
@@ -48,3 +49,24 @@ alias bb='current_dir=$PWD; cd ~/dev/baktus/; catkin_make; cd $current_dir;'
 
 # Source baktus setup
 alias sb='source  ~/dev/baktus/devel/setup.zsh'
+
+# Source baktus setup
+alias bs='~/dev/baktus/scripts/status.sh'
+
+# View TF2 tree
+alias tf2='cd /var/tmp && rosrun tf2_tools view_frames.py && cd - && evince /var/tmp/frames.pdf &'
+
+# Play a complete
+alias playcomplete='paplay /usr/share/sounds/freedesktop/stereo/bell.oga'
+
+# Enhance images
+alias enhance='function ne() { docker run --rm -v "$(pwd)/`dirname ${@:$#}`":/ne/input -it alexjc/neural-enhance ${@:1:$#-1} "input/`basename ${@:$#}`"; }; ne'
+
+# Better cat
+alias cat="bat"
+
+# Pretty pinging
+alias ping="prettyping"
+
+# Combine fzf and bat to create nice preview
+alias preview="fzf --preview 'bat --color \"always\" {}'"
