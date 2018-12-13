@@ -19,6 +19,7 @@
     ~/bin:           bin
     ~/.config/rofi:  config/rofi
     ~/.config/i3:    config/i3
+    ~/.config/dunst: config/dunst
 
 
 
