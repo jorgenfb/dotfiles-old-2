@@ -89,6 +89,9 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+
 # change focus between tiling / floating windows
 #bindsym $mod+space focus mode_toggle
 
@@ -138,6 +141,8 @@ bindsym $mod+Control+h move workspace to output left
 bindsym $mod+Control+l move workspace to output right
 bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Right move workspace to output right
+
+bindsym $mod+Shift+m exec i3-msg move workspace $ws1 to output primary
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -224,7 +229,7 @@ bindsym --release Control+Print exec gnome-screenshot --interactive
 # Assign certain applications to a spesific workspace
 assign [class="Google-chrome"] $ws1
 assign [class="Slack"] $ws3
-assign [class="Gitkraken"] $ws6
+assign [class="GitKraken"] $ws6
 assign [class="Code"] $ws4
 assign [class="Chromium-browser"] $ws4
 assign [class="Virtualbox Machine"] $ws9
@@ -236,3 +241,6 @@ exec --no-startup-id compton -f
 
 # Clipboard manager
 exec --no-startup-id clipit --daemon
+
+# Background image
+exec feh --bg-fill /home/jorgen/Downloads/zvxqbul1xh7x.png
