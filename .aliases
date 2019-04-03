@@ -70,3 +70,11 @@ alias ping="prettyping"
 
 # Combine fzf and bat to create nice preview
 alias preview="fzf --preview 'bat --color \"always\" {}'"
+
+# Shortcuts
+alias cd..="cd .."
+alias gb="cd ~/dev/baktus"
+alias gd="cd ~/Downloads"
+alias gp="cd ~/Pictures"
+alias ga="cd ~/dev/armdroid-ws"
+

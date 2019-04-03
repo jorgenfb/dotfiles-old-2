@@ -18,3 +18,8 @@ fi
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# Add subdirectories of bin to path
+PATH="$(du $HOME/bin/ | cut -f2 | tr '\n' ':')$PATH"
+
+TERMINAL=terminator

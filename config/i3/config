@@ -9,9 +9,11 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Definitions
 # modifier = Alt, $sup = Wind0ws key
 set $mod Mod1
 set $sup Mod4
+set $term --no-startup-id terminator
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -34,13 +36,11 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
+bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show combi
 bindsym $mod+space exec rofi -show combi
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -81,9 +81,9 @@ bindsym $mod+minus split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+Tab layout tabbed
+bindsym $mod+Tab layout toggle tabbed splith
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -152,6 +152,11 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+Shift+y exec --no-startup-id i3resize left
+bindsym $mod+Shift+u exec --no-startup-id i3resize down
+bindsym $mod+Shift+i exec --no-startup-id i3resize up
+bindsym $mod+Shift+o exec --no-startup-id i3resize right
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -176,17 +181,28 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+# Gaps gaps inner 10
+gaps outer 15
+bindsym $mod+s          gaps inner current plus 5
+bindsym $mod+Shift+s    gaps inner current minus 5
+bindsym $mod+d    gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+d    gaps inner current set 0; gaps outer current set 0
+
+for_window [class="^.*"] border pixel 2
+
 
 # Color variables
+set $active              #FF1493
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $red                 #FF0000
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.focused          $active             $active            $text-color          #00ff00
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
@@ -226,6 +242,9 @@ bindsym --release Print exec gnome-screenshot
 bindsym --release Shift+Print exec gnome-screenshot --area
 bindsym --release Control+Print exec gnome-screenshot --interactive
 
+# Misc
+bindsym $mod+Shift+plus exec emojipicker
+
 # Assign certain applications to a spesific workspace
 assign [class="Google-chrome"] $ws1
 assign [class="Slack"] $ws3
@@ -237,10 +256,27 @@ assign [class="VirtualBox Manager"] $ws9
 assign [class="Google Play Music Desktop Player"] $ws10
 
 # Compositor (enabling fade with the -f flag)
-exec --no-startup-id compton -f
+#exec --no-startup-id compton -f
 
 # Clipboard manager
 exec --no-startup-id clipit --daemon
 
 # Background image
-exec feh --bg-fill /home/jorgen/Downloads/zvxqbul1xh7x.png
+exec feh --bg-fill /home/jorgen/.config/wall.jpg
+
+# Autoconfigure monitors
+bindsym $mod+m exec --no-startup-id exec python ~/dev/forks/auto-randr/auto.py
+
+# #---Dropdown Windows---# #
+for_window [instance="math"] floating enable
+for_window [instance="math"] resize set 625 450
+for_window [instance="math"] move scratchpad
+for_window [instance="math"] sticky enable
+for_window [instance="math"] border pixel 5
+exec --no-startup-id terminator --classname math --profile calculator --title MATH --command "python3 -q"
+
+bindsym $mod+u [instance="math"] scratchpad show; [instance="math"] move position center
+bindsym XF86Calculator [instance="math"] scratchpad show; [instance="math"] move position center
+
+
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Show menu to select monitor setup
+
+echo 'external_on_right_align_bottom\nmirror\nbuiltin_only\nexternal_only' | rofi -dmenu | xargs python ~/dev/forks/auto-randr/auto.py -s
